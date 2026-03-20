@@ -21,6 +21,9 @@ require("lazy").setup({
     { import = "plugins.completion"  },
     { import = "plugins.telescope"   },
     { import = "plugins.ui"          },
+    { import = "plugins.toggleterm"  },
+    { import = "plugins.lazygit"  },
+
 }, {
     change_detection = { notify = false },
     checker          = { enabled = true, notify = false },

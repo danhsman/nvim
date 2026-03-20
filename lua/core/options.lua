@@ -6,6 +6,8 @@ local opt = vim.opt
 
 -- UI
 opt.number         = true
+opt.laststatus = 3        -- global statusline (you likely have this already)
+opt.fillchars  = vim.opt.fillchars + { horiz = "─", horizup = "┴", horizdown = "┬", vert = "│", vertleft = "┤", vertright = "├", verthoriz = "┼" }
 opt.relativenumber = true
 opt.signcolumn     = "yes"
 opt.cursorline     = true

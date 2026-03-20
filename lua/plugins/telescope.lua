@@ -19,11 +19,12 @@ return {
 
             telescope.setup({
                 defaults = {
-                    prompt_prefix   = "  ",
-                    selection_caret = " ",
-                    path_display    = { "truncate" },
+                    prompt_prefix    = "  ",
+                    selection_caret  = "  ",
+                    path_display     = { "truncate" },
                     sorting_strategy = "ascending",
-                    layout_config   = {
+                    borderchars      = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+                    layout_config    = {
                         horizontal = {
                             prompt_position = "top",
                             preview_width   = 0.55,
@@ -44,6 +45,20 @@ return {
             })
 
             telescope.load_extension("fzf")
+
+            -- Telescope highlight overrides (oxocarbon + pink accent)
+            local set = vim.api.nvim_set_hl
+            set(0, "TelescopeBorder",         { fg = "#BE95FF", bg = "#1a1a1a" })
+            set(0, "TelescopePromptBorder",    { fg = "#FF7EB6", bg = "#1a1a1a" })
+            set(0, "TelescopePromptNormal",    { fg = "#F2F4F8", bg = "#1a1a1a" })
+            set(0, "TelescopePromptPrefix",    { fg = "#FF7EB6", bg = "#1a1a1a" })
+            set(0, "TelescopeNormal",          { bg = "#1a1a1a" })
+            set(0, "TelescopePreviewTitle",    { fg = "#161616", bg = "#BE95FF", bold = true })
+            set(0, "TelescopePromptTitle",     { fg = "#161616", bg = "#FF7EB6", bold = true })
+            set(0, "TelescopeResultsTitle",    { fg = "#161616", bg = "#BE95FF", bold = true })
+            set(0, "TelescopeSelection",       { fg = "#F2F4F8", bg = "#2e2e2e", bold = true })
+            set(0, "TelescopeSelectionCaret",  { fg = "#FF7EB6", bg = "#2e2e2e" })
+            set(0, "TelescopeMatching",        { fg = "#FF7EB6", bold = true })
         end,
     },
 }

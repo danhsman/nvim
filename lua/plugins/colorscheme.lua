@@ -35,6 +35,9 @@ return {
             set(0, "StatusLineNC",      { fg = "#525252", bg = "#161616" })
             set(0, "WinBar",            { fg = "#F2F4F8", bg = "#262626" })
             set(0, "WinBarNC",          { fg = "#525252", bg = "#161616" })
+            -- Thin separator line above statusline
+            set(0, "WinSeparator", { fg = "#BE95FF", bg = "NONE" })
+            set(0, "StatusLine",   { fg = "#F2F4F8", bg = "#1a1a1a" })
         end,
     },
 }
